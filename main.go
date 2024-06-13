@@ -3,11 +3,14 @@ package main
 import (
 	"net/http"
 
+	"github.com/JoaoFerrareis02/REST-API-GO/db"
 	"github.com/JoaoFerrareis02/REST-API-GO/models"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+
+	db.InitDB()
 
 	server := gin.Default()
 
