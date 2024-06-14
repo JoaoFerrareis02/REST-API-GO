@@ -23,6 +23,8 @@ func Authenticate(context *gin.Context) {
 		return
 	}
 
+	context.Set("userId", userId)
+
 	context.Next()
 
 }
