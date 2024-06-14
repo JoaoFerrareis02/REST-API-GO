@@ -1,6 +1,8 @@
 package models
 
 import (
+	"errors"
+
 	"github.com/JoaoFerrareis02/REST-API-GO/db"
 	"github.com/JoaoFerrareis02/REST-API-GO/utils"
 )
@@ -53,7 +55,15 @@ func (u User) ValidateCredentials() error {
 	err := row.Scan(&retrievedPassword)
 
 	if err != nil {
-		return err
+		return errors.New("credentials invalid")
 	}
+
+	passwordIsValid := utils.CheckPasswordHash(u.Password, retrievedPassword)
+
+	if !passwordIsValid {
+		return errors.New("credentials invalid")
+	}
+
+	return nil
 
 }
