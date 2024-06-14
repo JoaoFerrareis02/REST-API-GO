@@ -9,6 +9,7 @@ Building a Go-Powered "Event Booking" REST API
 * [Gin Framework](https://github.com/gin-gonic/gin)
 * [SQLite 3 Driver](https://github.com/mattn/go-sqlite3)
 * [Bcrypt](https://cs.opensource.google/go/x/crypto)
+* [JSON Web Token](https://github.com/golang-jwt/jwt)
 
 ## Made by:
 João Victor Ferrareis Ribeiro
